@@ -1,5 +1,5 @@
-Host: Index update for the week, S and P and Nasdaq via the ETFs.
-Host: SPY first. The breakout level was 5,850 on my chart and we are hovering right at it. If 5,850 holds as support after the CPI print, the year end melt up scenario stays alive.
-Host: QQQ is the one lagging. The resistance is 20,400. Tech needs QQQ through 20,400 to confirm whatever SPY does, otherwise it is a divergence and divergences late in a trend make me nervous.
-Host: So the pair to watch, SPY holding 5,850, QQQ attacking 20,400. One without the other is a warning.
+Host: Index update for the week, S and P and Nasdaq via the futures.
+Host: ES first. The breakout level was 5,850 on my chart and we are hovering right at it. If 5,850 holds as support after the CPI print, the year end melt up scenario stays alive.
+Host: NQ is the one lagging. The resistance is 20,400. Tech needs NQ through 20,400 to confirm whatever ES does, otherwise it is a divergence and divergences late in a trend make me nervous.
+Host: So the pair to watch, ES holding 5,850, NQ attacking 20,400. One without the other is a warning.
 Host: Light week for data after Wednesday, so the levels should be honest.
