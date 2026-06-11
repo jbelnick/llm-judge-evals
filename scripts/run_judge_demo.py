@@ -3,8 +3,9 @@
 
 By default this replays a committed fixture response (no network, runs in
 CI). The fixture reproduces a failure mode live judges show in practice:
-it scores the drifted candidate 88 because the summary reads well, and the
-code-level scale-error cap pulls it down to 79. Pass --live to query a real
+it scores the drifted candidate 93, above the faithful one, because the
+summary reads well. The code-level scale-error cap pulls it down to 79, and
+that cap alone flips the winner. Pass --live to query a real
 OpenAI-compatible endpoint instead (JUDGE_BASE_URL, JUDGE_MODEL, optional
 JUDGE_API_KEY) and watch the same cross-check guard a real judge.
 
