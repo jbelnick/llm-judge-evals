@@ -25,22 +25,23 @@ failure modes this gate exists to catch, and CI asserts the gate rejects
 every one of them:
 
 ```text
-GATE FAIL: 14 regression(s)
+GATE FAIL: 20 regression(s)
   - case-02: lost golden price levels (2 -> 1; missing: 0.09832)
   - case-02: new decimal-scale error (DOGE: 0.09832 became 0.9832)
-  - case-09: invented numbers with no transcript support (225)
   - case-06: required section missing or forbidden label present
+  - case-09: invented numbers with no transcript support (225)
   ...
 ```
 
 `make demo` shows why the LLM judge is never trusted alone. The judge scores
-a shifted-decimal summary 88 because it reads well; the deterministic
-cross-check caps it to 79 and the faithful candidate wins:
+a shifted-decimal summary 93, above the faithful candidate, because it reads
+well; the deterministic cross-check caps it to 79, and that cap alone flips
+the winner:
 
 ```text
 winner: pipeline-current
-  pipeline-current           score 92
-  pipeline-after-model-swap  score 79 (judge said 88, capped for scale error)
+  pipeline-current           score 90
+  pipeline-after-model-swap  score 79 (judge said 93, capped for scale error)
     scale error: expected 0.09832, found 0.9832
 ```
 
@@ -87,7 +88,7 @@ eval/baselines/        Committed baseline (passing) and drifted (failing) summar
 eval/fixtures/         Committed judge response for deterministic CI replay
 scripts/               run_eval, run_regression_gate, run_judge_demo, public_safety_scan
 src/judge_evals/       scorers, judge, judge clients, gate runner
-tests/                 35 tests, including the gate-catches-drift assertions
+tests/                 Unit tests plus the gate-catches-drift assertions
 ```
 
 ## Live judging
@@ -101,16 +102,18 @@ export JUDGE_MODEL=your-model-name
 PYTHONPATH=src python3 scripts/run_judge_demo.py --live
 ```
 
-## Part of one system
+## Part Of One System
 
-This repo is the quality gate in a three-part portfolio that reads as one
+This repo is the quality gate in a four-repo portfolio that reads as one
 system:
 
 - [cerebellum-local-ai-router](https://github.com/jbelnick/cerebellum-local-ai-router):
   routing and cost control, deciding which model does the work.
 - [meeting-intelligence-pipelines](https://github.com/jbelnick/meeting-intelligence-pipelines):
   the workflow shape, turning raw transcripts into reviewed artifacts.
-- llm-judge-evals (this repo): the quality gate that lets the other two
+- [meeting-intelligence-mcp](https://github.com/jbelnick/meeting-intelligence-mcp):
+  the MCP server that exposes the pipeline's tools to any MCP client.
+- llm-judge-evals (this repo): the quality gate that lets the others
   change safely.
 
 ## Real vs synthetic
