@@ -1,3 +1,14 @@
+---
+Date Created: 2026-06-16
+Date modified: 2026-06-16
+Status: active
+Tags:
+  - belnick
+  - project
+  - llm-judge-evals
+  - readme
+---
+
 # LLM Judge Evals
 
 [![Verify](https://github.com/jbelnick/llm-judge-evals/actions/workflows/verify.yml/badge.svg)](https://github.com/jbelnick/llm-judge-evals/actions/workflows/verify.yml)

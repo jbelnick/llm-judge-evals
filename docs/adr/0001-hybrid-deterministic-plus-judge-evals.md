@@ -1,3 +1,13 @@
+---
+Date Created: 2026-06-16
+Date modified: 2026-06-16
+Status: active
+Tags:
+  - belnick
+  - project
+  - llm-judge-evals
+---
+
 # ADR 0001: Hybrid deterministic scoring plus a rubric-anchored LLM judge, gated in CI
 
 Status: Accepted. Extracted from a production stock-summary workflow (June 2026).
